@@ -3,11 +3,6 @@ import react from "react";
 import React, { Component } from "react";
 import logo from "./logo64.png";
 import { Link } from "react-router-dom";
-import {
-  AiOutlineShopping,
-  AiOutlineHeart,
-  AiOutlineSearch,
-} from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 
 const Header = () => {
@@ -20,7 +15,7 @@ const Header = () => {
             <Link to="/">
               <img src={logo} alt="logo" />
             </Link>
-            <span className="nav-title">flashBookStore</span>
+            <span className="nav-title">flashVideoLibrary</span>
           </section>
 
           {/* login button */}
