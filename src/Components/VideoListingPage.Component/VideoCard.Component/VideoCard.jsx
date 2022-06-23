@@ -1,9 +1,34 @@
+import { useData } from "../../../Custom-hooks/useData";
 import React from "react";
 import "./videocard.css";
+
 const VideoCard = () => {
+  const { videosData } = useData();
+  console.log(videosData);
   return (
     <>
-      <div className="card-basic ">
+      {videosData.map((videos) => {
+        return (
+          <div key={videos._id} className="card-basic ">
+            <img
+              src={videos.thumbnail_url}
+              alt="image"
+              className="avatar sq-avatar card-img video-img"
+            />
+            <div className="card-typo">
+              <div className="card capitalize fW-400 color text-left">
+                {videos.title}
+              </div>
+
+              <button className="btn btn-pri-outlined width100 mgT-20">
+                watch later
+              </button>
+            </div>
+          </div>
+        );
+      })}
+
+      {/* <div className="card-basic ">
         <img
           src="https://i.ytimg.com/vi/tfchHFd3CvU/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBs5jth4wxfziM5xcH8RIZFxfBP0A"
           alt="image"
@@ -18,7 +43,7 @@ const VideoCard = () => {
             watch later
           </button>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
