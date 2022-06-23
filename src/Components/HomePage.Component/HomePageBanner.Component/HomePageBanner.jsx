@@ -2,6 +2,7 @@ import "./homepage-banner.css";
 import React from "react";
 import mainPageSvg from "./mainPageSvg.svg";
 import { Link } from "react-router-dom";
+
 const HomePageBanner = () => {
   return (
     <>
@@ -18,7 +19,7 @@ const HomePageBanner = () => {
               quod fugiat officiis?
             </span>
             <div className="mgT-20">
-              <Link to="/productListingPage">
+              <Link to="/VideoListing">
                 <button className="btn solid-pri-btn">watch now</button>
               </Link>
             </div>
