@@ -1,11 +1,9 @@
-import React from "react";
-import Header from "../Components/Header.Component/Header";
+import React from "react";  
 import Home from "../Components/HomePage.Component/Home";
 
 const HomeMain = () => {
   return (
     <>
-      <Header />
       <Home />
     </>
   );

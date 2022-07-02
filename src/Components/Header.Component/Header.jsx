@@ -1,9 +1,10 @@
 import "./header.css";
-import react from "react";
-import React, { Component } from "react";
+import React from "react";
 import logo from "./logo64.png";
 import { Link } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
+import { AiOutlineClockCircle } from "react-icons/ai";
+import { IoPlayOutline } from "react-icons/io5";
 
 const Header = () => {
   return (
@@ -20,10 +21,18 @@ const Header = () => {
 
           {/* login button */}
           <section className="nav-container-endsec">
-            <Link to="/login">
+            <Link to="/VideoListing">
               <div className="badge-on-avatar navbar-icons">
                 <div className="size">
-                  <CgProfile size="lg" />
+                  <IoPlayOutline size="lg" />
+                </div>
+              </div>
+            </Link>
+
+            <Link to="/WatchLater">
+              <div className="badge-on-avatar navbar-icons">
+                <div className="size">
+                  <AiOutlineClockCircle size="lg" />
                 </div>
               </div>
             </Link>
