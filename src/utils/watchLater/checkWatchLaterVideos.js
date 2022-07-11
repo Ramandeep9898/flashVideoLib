@@ -4,6 +4,7 @@ const checkWatchLaterVideos = (
   WatchLaterOrPlaylist,
   currentDispatchValueQuantity
 ) => {
+  console.log("watchLater")
   if (WatchLaterOrPlaylist === "WATCH_LATER") {
     if (watchLater.length !== 0) {
       let foundItem = false;

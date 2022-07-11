@@ -10,6 +10,9 @@ const WatchLater = () => {
   const { watchLaterState }= useWatchLater();
   const userWatchLaterData = getWatchLaterLocalStorage(watchLaterState);
   const watchLaterItems = getWatchLaterItems(userWatchLaterData, "watchLater");
+  console.log("watchLaterStatebitch",userWatchLaterData);
+  
+  // const watchLaterItems = getWatchLaterItems(watchLaterState, "watchLater");
   return (
     <>
       <h1>videocard</h1>
