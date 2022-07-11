@@ -1,12 +1,12 @@
 import React from "react";
 import { useWatchLater } from "../../../../contexts/watchLaterContext";
 const VideoCardMain = ({ 
-  videosData,
   videos,
   addWatchLater,
-  watchLater,
  }) => {
+  
    const { watchLaterStateDispatch } = useWatchLater();
+   console.log(videos)
    return (
     <>
       <div key={videos._id} className="card-basic ">

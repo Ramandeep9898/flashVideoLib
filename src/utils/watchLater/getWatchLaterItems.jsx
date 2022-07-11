@@ -1,4 +1,4 @@
 export const getWatchLaterItems = (productData, watchLaterOrPlaylist) =>
 productData && watchLaterOrPlaylist === "watchLater"
-  ? productData.filter((item) => item.inWishlist)
-  : productData.filter((item) => item.inCart);
+  ? productData.filter((item) => item.watchLater)
+  : productData.filter((item) => item.playList);

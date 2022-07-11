@@ -1,28 +1,25 @@
 import React from "react";
 import VideoCardMain from "../VideoListingPage.Component/VideoCard.Component/VideoCardMain.Component/VideoCardMain";
 import { useWatchLater } from "../../contexts/watchLaterContext";
-import { getWatchLaterLocalStorage } from "../../utils/watchLater/getWatchLaterLocalStorage";
-import { getWatchLaterItems } from "../../utils/watchLater/getWatchLaterItems";
+import { getWatchLaterLocalStorage } from "../../utils/watchLater/getWatchLaterLocalStorage.jsx";
+import { getWatchLaterItems } from "../../utils/watchLater/getWatchLaterItems.jsx";
 import { addWatchLater } from "../../utils/watchLater/addWatchLater";
-import { videos } from "../../backend/db/videos";
 
 const WatchLater = () => {
   const { watchLaterState }= useWatchLater();
   const userWatchLaterData = getWatchLaterLocalStorage(watchLaterState);
-  const watchLaterItems = getWatchLaterItems(userWatchLaterData, "watchLater");
-  console.log("watchLaterStatebitch",userWatchLaterData);
+  // const watchLaterItems = getWatchLaterItems(userWatchLaterData, "watchLater");
+  // console.log("watchLaterStatebitch",watchLaterItems);
+
   
-  // const watchLaterItems = getWatchLaterItems(watchLaterState, "watchLater");
   return (
     <>
       <h1>videocard</h1>
-
-      {watchLaterItems.map((videos)=>(
+{console.log(<VideoCardMain/>)}
+      {userWatchLaterData.map((videos)=>(
         <VideoCardMain
-        // videoCardData={videos}
         videos ={videos}
         addWatchLater ={addWatchLater}
-        watchLater= "watchLater"
         />
       ))}
     </>
