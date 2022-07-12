@@ -1,0 +1,11 @@
+.card-img-watch-later{
+    max-width: 300px;
+    margin: 10px ;
+}
+.card-vertical-WL{
+    max-width: 320px;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--lightmode-bg-color);
+
+}
