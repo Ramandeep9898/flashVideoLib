@@ -1,0 +1,7 @@
+.category-bar-body {
+  padding: 50px 80px 30px 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+}

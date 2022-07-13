@@ -1,19 +1,24 @@
+import { createRoot } from "react-dom/client";
 import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
+import { StrictMode } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-
+import { CategoryProvider } from "./contexts/categoryContext";
+import { WatchLaterProvider } from "./contexts/watchLaterContext";
 // Call make Server
+const root = createRoot(document.getElementById("root"));
 makeServer();
 
-ReactDOM.render(
-  <React.StrictMode>
+root.render(
+  <StrictMode>
     <Router>
-      <App />
+      <WatchLaterProvider>
+        <CategoryProvider>
+          <App />
+        </CategoryProvider>
+      </WatchLaterProvider>
     </Router>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </StrictMode>
 );
