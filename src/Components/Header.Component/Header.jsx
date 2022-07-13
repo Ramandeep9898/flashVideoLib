@@ -6,7 +6,7 @@ import { CgProfile } from "react-icons/cg";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { IoPlayOutline } from "react-icons/io5";
 import {BiHomeSmile} from "react-icons/bi"
-// BiHomeSmile
+
 const Header = () => {
   return (
     <>
