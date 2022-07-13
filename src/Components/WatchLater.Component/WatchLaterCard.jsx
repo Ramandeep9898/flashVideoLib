@@ -1,11 +1,11 @@
 import React from "react";
 import "./watch-later-card.css"
-import {AiOutlineDelete} from "react-icons/ai"
-// AiOutlineDelete
+import { useWatchLater } from "../../contexts/watchLaterContext";
 
 const WatchLaterCard = ({
     videos, 
 })=>{
+    const{ watchLaterStateDispatch } = useWatchLater();
     return (
         <>
         <div className="card-vertical-WL">
@@ -22,7 +22,12 @@ const WatchLaterCard = ({
             
             <button
                 className="btn btn-pri-outlined width100 mg-top16"
-             
+                onClick={ ()=>
+                    watchLaterStateDispatch({
+                        type: "REMOVE_FROM_WATCH_LATER",
+                        value: videos,
+                    })
+                }
             >
                 remove from cart
             </button>
