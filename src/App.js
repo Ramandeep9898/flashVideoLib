@@ -5,14 +5,16 @@ import HomeMain from "./Pages/HomeMain";
 import VideoListingMain from "./Pages/ProductListingMain";
 import WatchLaterMain from "./Pages/WatchLaterMain";
 import Header from "./Components/Header.Component/Header";
+import PlaylistMain from "./Pages/PlaylistMain";
 function App() {
   return (
     <div className="App">
       <Header />
       <Routes>
-      <Route path="/" element={<HomeMain />} />
-      <Route path="/VideoListing" element={<VideoListingMain />} />
-      <Route path="/WatchLater" element={<WatchLaterMain />} />
+        <Route path="/" element={<HomeMain />} />
+        <Route path="/VideoListing" element={<VideoListingMain />} />
+        <Route path="/WatchLater" element={<WatchLaterMain />} />
+        <Route path="/PlayList" element={<PlaylistMain />} />
       </Routes>
     </div>
   );
