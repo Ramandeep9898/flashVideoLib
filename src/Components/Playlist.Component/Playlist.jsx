@@ -1,29 +1,49 @@
-import React, { useState } from "react";
-import Empty from "../WatchLater.Component/Empty";
+import React, { useEffect, useState } from "react";
 import "./playlist.css";
-// import { MdOutlineClose } from "react-icons/md";
+import UserPlaylist from "./UserPlaylist";
 import CreateNewPlaylist from "./CreateNewPlaylist";
-// MdOutlineClose
 
 const Playlist = () => {
-  const [createNewPlaylist, setCreateNewPlaylist] = useState(false);
-  const createNewPlaylisthandler = () => {
-    setCreateNewPlaylist(true);
+  const [createPlaylistModel, setCreatePlaylistModel] = useState(false);
+  const [playlistItem, setPlaylistItem] = useState({
+    title: "",
+  });
+  const [playlistArr, setPlayListArr] = useState([playlistItem]);
+  const createPlaylistModelToggleHandler = () => {
+    setCreatePlaylistModel(!createPlaylistModel);
   };
+  // useEffect(() => {
+  //   setPlayListArr(playlistArr);
+  // });
+  // console.log(playlistArr);
+
   return (
     <>
-      {/* <Empty name="Playlist" link="PlayList" button="Create Now +" /> */}
       <div className="empty-comp">
         <h1 className="text-center">Your Playlist is empty.</h1>
 
         <button
           className="btn solid-pri-btn mgT-16"
-          onClick={createNewPlaylisthandler}
+          onClick={createPlaylistModelToggleHandler}
         >
           Create Now +
         </button>
       </div>
-      {createNewPlaylist ? <CreateNewPlaylist /> : null}
+      {createPlaylistModel ? (
+        <CreateNewPlaylist
+          createPlaylistModel={createPlaylistModel}
+          setCreatePlaylistModel={setCreatePlaylistModel}
+          playlistItem={playlistItem.title}
+          setPlaylistItem={setPlaylistItem}
+        />
+      ) : (
+        ""
+      )}
+      {playlistItem.title.length === 0 ? (
+        ""
+      ) : (
+        <UserPlaylist playlistItem={playlistItem.title} />
+      )}
     </>
   );
 };
