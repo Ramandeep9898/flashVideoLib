@@ -6,6 +6,8 @@ import { CgProfile } from "react-icons/cg";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { IoPlayOutline } from "react-icons/io5";
 import {BiHomeSmile} from "react-icons/bi"
+import {TbPlaylistAdd} from "react-icons/tb"
+
 
 const Header = () => {
   return (
@@ -44,6 +46,15 @@ const Header = () => {
                 </div>
               </div>
             </Link>
+
+            <Link to="/PlayList">
+              <div className="badge-on-avatar navbar-icons">
+                <div className="size">
+                  <TbPlaylistAdd size="lg" />
+                </div>
+              </div>
+            </Link>
+
           </section>
         </nav>
       </header>
