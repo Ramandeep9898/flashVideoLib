@@ -1,30 +1,29 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useWatchLater } from "../../../../contexts/watchLaterContext";
-const VideoCardMain = ({ 
-  videos,
-  addWatchLater,
- }) => {
-  
-   const { watchLaterStateDispatch } = useWatchLater();
+const VideoCardMain = ({ videos, addWatchLater }) => {
+  const { watchLaterStateDispatch } = useWatchLater();
   //  console.log(videos)
-   return (
+  return (
     <>
       <div key={videos._id} className="card-basic ">
         <img
           src={videos.thumbnail_url}
           alt="image"
           className="avatar sq-avatar card-img video-img"
-          />
-        <div className="card-typo">
-          <div className="card capitalize fW-400 color text-left">
-            {videos.title}
-          </div>
+        />
 
+        <div className="card-typo">
+          <Link to={`/VideoListing/${videos._id}`}>
+            <div className="card capitalize fW-400 color text-left">
+              {videos.title}
+            </div>
+          </Link>
           <button
             onClick={() => {
               // console.log("videos",videos);
               addWatchLater(
-                  videos,
+                videos,
                 "ADD_TO_WATCH_LATER",
                 watchLaterStateDispatch
               );

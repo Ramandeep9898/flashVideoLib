@@ -6,6 +6,7 @@ import VideoListingMain from "./Pages/ProductListingMain";
 import WatchLaterMain from "./Pages/WatchLaterMain";
 import Header from "./Components/Header.Component/Header";
 import PlaylistMain from "./Pages/PlaylistMain";
+import VideoDetailsMain from "./Pages/VideoDetailsMain";
 function App() {
   return (
     <div className="App">
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeMain />} />
         <Route path="/VideoListing" element={<VideoListingMain />} />
+        <Route path="/VideoListing/:videoID" element={<VideoDetailsMain />} />
         <Route path="/WatchLater" element={<WatchLaterMain />} />
         <Route path="/PlayList" element={<PlaylistMain />} />
       </Routes>
