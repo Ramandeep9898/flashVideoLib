@@ -1,0 +1,36 @@
+.video-detail-container {
+  padding: 20px 80px;
+  display: flex;
+  flex-direction: row;
+}
+.video-container {
+  width: 80%;
+}
+.aside {
+  width: 30%;
+}
+.video {
+  width: 100%;
+  height: 500px;
+  border-radius: 8px;
+}
+.disp-flex {
+  display: flex;
+  flex-direction: row;
+}
+.video-features {
+  justify-content: space-between;
+}
+.feature-endsec {
+  gap: 20px;
+}
+.btn-icon-gap {
+  gap: 5px;
+}
+.feature-endsec > div {
+  cursor: pointer;
+}
+.video-channel-info {
+  gap: 10px;
+  align-items: center;
+}

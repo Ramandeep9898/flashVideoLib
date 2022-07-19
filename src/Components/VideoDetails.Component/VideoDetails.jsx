@@ -1,17 +1,38 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { useData } from "../../Custom-hooks/useData";
+import React, { useEffect, useState } from "react";
+import "./video-details.css";
+import { useLocation, useParams } from "react-router-dom";
+import VideoSec from "./VideoSec";
+const axios = require("axios").default;
 
 const VideoDetails = () => {
-  const { videosData } = useData();
   const { videoID } = useParams();
+  const [videoDetails, setVideoDetails] = useState();
 
-  const getVideoDetails = (videosData, videoID) => {
-    return videosData.find((video) => video._id === videoID);
-  };
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await axios.get(`/api/video/${videoID}`);
+        if (response.status === 200) {
+          setVideoDetails(response.data.video);
+          console.log("VideoDetails", response.data.video);
+        }
+      } catch (error) {
+        console.error("error", error);
+      }
+    })();
+  }, [videoID]);
 
-  const video = getVideoDetails(videosData, videoID);
-  return <></>;
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return (
+    <>
+      <VideoSec {...videoDetails} />
+    </>
+  );
 };
 
 export default VideoDetails;

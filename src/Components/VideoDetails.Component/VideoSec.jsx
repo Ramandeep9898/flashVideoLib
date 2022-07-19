@@ -1,0 +1,85 @@
+import React from "react";
+import {
+  AiOutlineLike,
+  AiOutlineShareAlt,
+  AiOutlineClockCircle,
+} from "react-icons/ai";
+import { MdPlaylistAdd } from "react-icons/md";
+
+const VideoSec = ({
+  _id,
+  title,
+  url,
+  subtitle,
+  thumbnail_url,
+  category,
+  channel_name,
+  channel_logo,
+  subscribers,
+  discription,
+  share_link,
+  date,
+  veiws,
+}) => {
+  return (
+    <>
+      <div className="video-detail-container">
+        <div className="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/1j2YXCvTtTs"
+            // src={share_link}
+            frameborder="0"
+            allowfullscreen
+            className="video"
+          ></iframe>
+          <div className="h3 capitalize fW-500 color text-left mgT-16">
+            {title}
+          </div>
+          <div className="h7 capitalize fW-500 color text-left mgT-8">
+            {subtitle}
+          </div>
+          <div className="video-features h5 capitalize fW-500 color text-left mgT-8 disp-flex ">
+            <div className="features-startsec disp-flex ">
+              <div className="viewcount">{veiws} views &#8226; </div>
+              <div className="date"> {date} </div>
+            </div>
+            <div className="feature-endsec disp-flex ">
+              <div className="btn-icon-gap disp-flex">
+                link
+                <AiOutlineLike />
+              </div>
+              <div className="btn-icon-gap disp-flex">
+                watch-later
+                <AiOutlineClockCircle />
+              </div>
+              <div className="btn-icon-gap disp-flex">
+                save
+                <MdPlaylistAdd />
+              </div>
+              <div className="btn-icon-gap disp-flex">
+                share
+                <AiOutlineShareAlt />
+              </div>
+            </div>
+          </div>
+          <div className="line-hori mgT-16"></div>
+
+          <div className="video-description mgT-16 h6 capitalize fW-500 color text-left mgT-8 ">
+            <div className="video-channel-info disp-flex ">
+              <div className="channel-logo">
+                <img src={channel_logo} alt="" className="avatar avatar-md" />
+              </div>
+              <div className="channel-name-sub">
+                <div className="channel-name"> {channel_name}</div>
+                <div className="sub-count">{subscribers} subscribers</div>
+              </div>
+            </div>
+            <p className="description mgT-16">{discription}</p>
+          </div>
+        </div>
+        <div className="aside"></div>
+      </div>
+    </>
+  );
+};
+export default VideoSec;
