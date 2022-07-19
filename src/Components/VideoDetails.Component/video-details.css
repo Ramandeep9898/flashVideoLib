@@ -2,6 +2,7 @@
   padding: 20px 80px;
   display: flex;
   flex-direction: row;
+  gap: 80px;
 }
 .video-container {
   width: 80%;
