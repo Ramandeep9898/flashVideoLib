@@ -5,46 +5,63 @@ import axios from "axios";
 const likeContext = createContext();
 
 const LikeProvider = ({ children }) => {
-  const storageToken = localStorage.getItem("flashPlay");
+  localStorage.setItem("flashPlay", "1234");
+  const encodedToken = localStorage.getItem("flashPlay");
   const [likes, setLike] = useState([]);
 
   useEffect(() => {
     (async function() {
-      if (storageToken) {
+      if (encodedToken) {
         try {
-          const likeResponse = await axios.get("/api/likes");
+          const likeResponse = await axios.get("/api/user/likes", {
+            headers: {
+              authorization: encodedToken,
+            },
+          });
           console.log("likeResponse", likeResponse);
           if (likeResponse.status === 200) {
             setLike(likeResponse.data.likes);
           }
         } catch (error) {
-          console.log(error);
+          console.log("getError", error);
         }
       }
     })();
-  }, [storageToken]);
+  }, [encodedToken]);
 
   // add to likes
 
   const addToLikes = async (item) => {
     try {
-      const response = await axios.post("/api/likes", { video: item });
+      const response = await axios.post(
+        "/api/user/likes",
+        { video: item },
+        {
+          headers: {
+            authorization: encodedToken,
+          },
+        }
+      );
+      console.log(response);
       if (response.status === 201) {
         setLike(response.data.likes);
       }
     } catch (error) {
-      console.log(error);
+      // console.log("postError", error.response.data);
+      console.log("postError", error);
     }
   };
 
-  const removeFromLikes = async (items) => {
+  const removeFromLikes = async (item) => {
     try {
-      const response = await axios.delete(`/api/likes/${items._id}`);
+      const response = await axios.delete(`/api/user/${item._id}`);
+      console.log("jskdj");
+      console.log(response);
       if (response.status === 200) {
         setLike(response.data.likes);
       }
     } catch (error) {
-      console.log(error);
+      console.log("deleteError", error);
     }
   };
 
@@ -54,6 +71,6 @@ const LikeProvider = ({ children }) => {
     </likeContext.Provider>
   );
 };
-const useLike = () => useContext(likeContext);
+const useLikes = () => useContext(likeContext);
 
-export { useLike, LikeProvider };
+export { useLikes, LikeProvider };

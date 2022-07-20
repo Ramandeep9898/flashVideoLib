@@ -7,6 +7,7 @@ import WatchLaterMain from "./Pages/WatchLaterMain";
 import Header from "./Components/Header.Component/Header";
 import PlaylistMain from "./Pages/PlaylistMain";
 import VideoDetailsMain from "./Pages/VideoDetailsMain";
+import LikeMain from "./Pages/LikeMain";
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,7 @@ function App() {
         <Route path="/VideoListing/:videoID" element={<VideoDetailsMain />} />
         <Route path="/WatchLater" element={<WatchLaterMain />} />
         <Route path="/PlayList" element={<PlaylistMain />} />
+        <Route path="/LikedVideos" element={<LikeMain />} />
       </Routes>
     </div>
   );

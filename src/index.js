@@ -7,7 +7,7 @@ import { StrictMode } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { CategoryProvider } from "./contexts/categoryContext";
 import { WatchLaterProvider } from "./contexts/watchLaterContext";
-import { LikeProvider } from "./contexts/LikeContext";
+import { LikeProvider } from "./contexts/likeContext";
 // Call make Server
 
 const root = createRoot(document.getElementById("root"));

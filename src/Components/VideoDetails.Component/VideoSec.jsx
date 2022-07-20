@@ -1,4 +1,5 @@
 import React from "react";
+import { AddToLike } from "../../utils/watchLater/AddToLike";
 import {
   AiOutlineLike,
   AiOutlineShareAlt,
@@ -19,7 +20,9 @@ const VideoSec = ({
   share_link,
   date,
   veiws,
+  videoDetails,
 }) => {
+  // console.log(videoDetails);
   const videoEmbed = "https://www.youtube.com/embed/";
   const videoSrc = `${videoEmbed}${_id}?autoplay=1`;
   return (
@@ -43,10 +46,7 @@ const VideoSec = ({
             <div className="date"> {date} </div>
           </div>
           <div className="feature-endsec disp-flex ">
-            <div className="btn-icon-gap disp-flex">
-              link
-              <AiOutlineLike />
-            </div>
+            <AddToLike videoDetails={videoDetails} />
             <div className="btn-icon-gap disp-flex">
               watch-later
               <AiOutlineClockCircle />

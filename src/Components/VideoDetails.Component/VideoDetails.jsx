@@ -5,6 +5,7 @@ import VideoSec from "./VideoSec";
 import { useData } from "../../Custom-hooks/useData";
 import VideoCardMain from "../VideoListingPage.Component/VideoCard.Component/VideoCardMain.Component/VideoCardMain";
 import { addWatchLater } from "../../utils/watchLater/addWatchLater";
+
 const axios = require("axios").default;
 
 const VideoDetails = () => {
@@ -35,7 +36,7 @@ const VideoDetails = () => {
   return (
     <>
       <div className="video-detail-container">
-        <VideoSec {...videoDetails} />
+        <VideoSec {...videoDetails} videoDetails={videoDetails} />
         <div className="aside">
           {videosData.map((videos) => (
             <VideoCardMain videos={videos} addWatchLater={addWatchLater} />
