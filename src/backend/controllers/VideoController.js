@@ -11,7 +11,7 @@ import { Response } from "miragejs";
  * */
 
 export const getAllVideosHandler = function() {
-  console.log("hi there");
+  // console.log("hi there");
   try {
     return new Response(200, {}, { videos: this.db.videos });
   } catch (error) {

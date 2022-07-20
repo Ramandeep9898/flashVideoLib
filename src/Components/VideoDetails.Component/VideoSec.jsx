@@ -20,7 +20,6 @@ const VideoSec = ({
   date,
   veiws,
 }) => {
-  // const src = `https://www.youtube.com/embed/${_id}`;
   const videoEmbed = "https://www.youtube.com/embed/";
   const videoSrc = `${videoEmbed}${_id}?autoplay=1`;
   return (

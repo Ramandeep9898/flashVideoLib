@@ -22,6 +22,7 @@ export const videos = [
     share_link: "https://youtu.be/47YJ4ncEkUo",
     date: "7 Sept 2021",
     veiws: "1,314,768",
+    likes: "3000",
   },
   {
     // _id: "38a62f0f-5ed9-4c48-b812-072680116249",
