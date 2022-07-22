@@ -7,6 +7,7 @@ import { StrictMode } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { CategoryProvider } from "./contexts/categoryContext";
 import { WatchLaterProvider } from "./contexts/watchLaterContext";
+import { AuthProvider } from "./Custom-hooks/useAuth";
 // Call make Server
 const root = createRoot(document.getElementById("root"));
 makeServer();
@@ -14,11 +15,13 @@ makeServer();
 root.render(
   <StrictMode>
     <Router>
-      <WatchLaterProvider>
-        <CategoryProvider>
-          <App />
-        </CategoryProvider>
-      </WatchLaterProvider>
+      <AuthProvider>
+        <WatchLaterProvider>
+          <CategoryProvider>
+            <App />
+          </CategoryProvider>
+        </WatchLaterProvider>
+      </AuthProvider>
     </Router>
   </StrictMode>
 );
