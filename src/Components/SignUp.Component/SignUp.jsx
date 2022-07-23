@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const SignUp = () => {
+const SignUp = ({ setAuthVal }) => {
   return (
     <>
       <main className="login-main">
@@ -84,11 +84,20 @@ const SignUp = () => {
             <button className="btn solid-pri-btn width100 mgT-20">
               sign up
             </button>
-            <Link to="/login">
+            {/* <Link to="/login">
               <p className="h5 color capitalize fW-500 text-center mgT-20">
                 already have a account{" "}
               </p>
-            </Link>
+            </Link> */}
+
+            <p
+              className="h5 color capitalize fW-500 text-center mgT-20"
+              onClick={() => {
+                setAuthVal(true);
+              }}
+            >
+              already have a account{" "}
+            </p>
           </div>
         </div>
       </main>

@@ -51,7 +51,7 @@ const AuthProvider = ({ children }) => {
 
   const signUpAuth = async (signUpDetails) => {
     try {
-      const response = await axios.post("/api/auth/sign", {
+      const response = await axios.post("/api/auth/signup", {
         firstName: signUpDetails.firstName,
         lastName: signUpDetails.lastName,
         email: signUpDetails.email,
