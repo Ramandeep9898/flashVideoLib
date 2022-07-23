@@ -5,11 +5,10 @@ import HomeMain from "./Pages/HomeMain";
 import VideoListingMain from "./Pages/ProductListingMain";
 import WatchLaterMain from "./Pages/WatchLaterMain";
 import Header from "./Components/Header.Component/Header";
-import LoginMain from "./Pages/LoginMain";
-import SignUpMain from "./Pages/SignUpMain";
 import PlaylistMain from "./Pages/PlaylistMain";
 import PrivateRoute from "./Components/Private-Route/Private.jsx";
 import { RestrictedRoute } from "./Components/RestrictedRoute.Component/RestrictedRoute.jsx";
+import { Auth } from "./Components/Auth.Component/Auth";
 import MockAPI from "./Mockman";
 function App() {
   return (
@@ -17,15 +16,13 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomeMain />} />
-        <Route path="/VideoListing" element={<VideoListingMain />} />
-        <Route path="/login" element={<LoginMain />} />
-        <Route path="/signup" element={<SignUpMain />} />
+        <Route path="/videos" element={<VideoListingMain />} />
         <Route element={<PrivateRoute />}>
-          <Route path="/WatchLater" element={<WatchLaterMain />} />
-          <Route path="/PlayList" element={<PlaylistMain />} />
+          <Route path="/watchlater" element={<WatchLaterMain />} />
+          <Route path="/playlists" element={<PlaylistMain />} />
         </Route>
         <Route element={<RestrictedRoute />}>
-          {/* <Route path="/auth" element={<Auth />} /> */}
+          <Route path="/auth" element={<Auth />} />
         </Route>
         <Route path="/mockman" element={<MockAPI />} />
       </Routes>

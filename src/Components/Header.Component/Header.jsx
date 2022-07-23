@@ -7,6 +7,7 @@ import { AiOutlineClockCircle } from "react-icons/ai";
 import { IoPlayOutline } from "react-icons/io5";
 import { BiHomeSmile } from "react-icons/bi";
 import { TbPlaylistAdd } from "react-icons/tb";
+import { AuthIcon } from "../HeaderIcon.Component/AuthIcon";
 
 const Header = () => {
   return (
@@ -59,6 +60,11 @@ const Header = () => {
                 </div>
               </div>
             </Link>
+            <div className="badge-on-avatar navbar-icons">
+              <div className="size">
+                <AuthIcon />
+              </div>
+            </div>
           </section>
         </nav>
       </header>

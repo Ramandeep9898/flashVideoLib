@@ -5,10 +5,10 @@ import { createContext, useContext, useState } from "react";
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const flashToken = localStorage.getItem("flashPlay");
+  const flashToken = localStorage.getItem("flashToken");
   const [user, setUser] = useState();
   const [encodedToken, setEncodedToken] = useState();
-  console.log(flashToken);
+  // console.log(flashToken);
   useEffect(() => {
     if (flashToken) {
       (async function() {
@@ -18,8 +18,7 @@ const AuthProvider = ({ children }) => {
             encodedToken: flashToken,
           });
           if (response.status === 200) {
-            setUser(response.data);
-            console.log(user);
+            setUser(response.data.foundUser);
           }
         } catch (error) {
           console.log(error);
@@ -29,20 +28,23 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const logInAuth = async (loginDetails) => {
+    console.log(loginDetails);
     try {
       const response = await axios.post("/api/auth/login", {
         email: loginDetails.email,
         password: loginDetails.password,
       });
+
       if (response.status === 200) {
         localStorage.setItem("flashToken", response.data.encodedToken);
         setUser(response.data.foundUser);
         setEncodedToken(response.data.encodedToken);
       }
     } catch (error) {
-      console.log(error);
+      console.log("login post error", error);
     }
   };
+
   const logOutAuth = () => {
     localStorage.removeItem("flashToken");
     setUser(null);
