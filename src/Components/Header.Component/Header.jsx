@@ -30,7 +30,7 @@ const Header = () => {
               </div>
             </Link>
 
-            <Link to="/VideoListing">
+            <Link to="/videos">
               <div className="badge-on-avatar navbar-icons">
                 <div className="size">
                   <IoPlayOutline size="lg" />
@@ -38,7 +38,7 @@ const Header = () => {
               </div>
             </Link>
 
-            <Link to="/WatchLater">
+            <Link to="/watchlater">
               <div className="badge-on-avatar navbar-icons">
                 <div className="size">
                   <AiOutlineClockCircle size="lg" />
@@ -46,20 +46,14 @@ const Header = () => {
               </div>
             </Link>
 
-            <Link to="/PlayList">
+            <Link to="/playlist">
               <div className="badge-on-avatar navbar-icons">
                 <div className="size">
                   <TbPlaylistAdd size="lg" />
                 </div>
               </div>
             </Link>
-            <Link to="/login">
-              <div className="badge-on-avatar navbar-icons">
-                <div className="size">
-                  <TbPlaylistAdd size="lg" />
-                </div>
-              </div>
-            </Link>
+
             <div className="badge-on-avatar navbar-icons">
               <div className="size">
                 <AuthIcon />

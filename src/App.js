@@ -9,6 +9,7 @@ import PlaylistMain from "./Pages/PlaylistMain";
 import PrivateRoute from "./Components/Private-Route/Private.jsx";
 import { RestrictedRoute } from "./Components/RestrictedRoute.Component/RestrictedRoute.jsx";
 import { Auth } from "./Components/Auth.Component/Auth";
+import User from "./Components/User.Component/User";
 import MockAPI from "./Mockman";
 function App() {
   return (
@@ -18,8 +19,9 @@ function App() {
         <Route path="/" element={<HomeMain />} />
         <Route path="/videos" element={<VideoListingMain />} />
         <Route element={<PrivateRoute />}>
+          <Route path="/user" element={<User />} />
           <Route path="/watchlater" element={<WatchLaterMain />} />
-          <Route path="/playlists" element={<PlaylistMain />} />
+          <Route path="/playlist" element={<PlaylistMain />} />
         </Route>
         <Route element={<RestrictedRoute />}>
           <Route path="/auth" element={<Auth />} />

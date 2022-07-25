@@ -1,20 +1,27 @@
 import React from "react";
+import "./auth-icon.css";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../Custom-hooks/useAuth";
-import { AiFillAlert } from "react-icons/ai";
+import { AiOutlineLogin } from "react-icons/ai";
 
 export const AuthIcon = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
+  {
+    console.log(user);
+  }
   return user ? (
-    console.log("done")
+    // console.log("done")
+    <button onClick={() => navigate("/user")} className="avatar avatar-s">
+      <h2 className="user-avatar">{`${user.firstName[0]}${user.lastName[0]}`}</h2>
+    </button>
   ) : (
-    <button
+    <div
       onClick={() => {
         navigate("/auth");
       }}
     >
-      <AiFillAlert />
-    </button>
+      <AiOutlineLogin />
+    </div>
   );
 };

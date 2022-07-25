@@ -8,7 +8,7 @@ const AuthProvider = ({ children }) => {
   const flashToken = localStorage.getItem("flashToken");
   const [user, setUser] = useState();
   const [encodedToken, setEncodedToken] = useState();
-  // console.log(flashToken);
+
   useEffect(() => {
     if (flashToken) {
       (async function() {
@@ -36,6 +36,7 @@ const AuthProvider = ({ children }) => {
       });
 
       if (response.status === 200) {
+        console.log(response.data.encodedToken);
         localStorage.setItem("flashToken", response.data.encodedToken);
         setUser(response.data.foundUser);
         setEncodedToken(response.data.encodedToken);
@@ -61,7 +62,7 @@ const AuthProvider = ({ children }) => {
       });
       if (response.status === 201) {
         localStorage.setItem("flashToken", response.data.encodedToken);
-        setUser(response.data.foundUser);
+        setUser(response.data.createdUser);
         setEncodedToken(response.data.encodedToken);
       }
     } catch (error) {

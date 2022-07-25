@@ -110,11 +110,6 @@ const Login = ({ setAuthVal }) => {
               login
             </button>
 
-            {/* <Link to="/signup">
-              <p className="h5 color capitalize fW-500 text-center mgT-20">
-                create new account &#62;
-              </p>
-            </Link> */}
             <p
               className="h5 color capitalize fW-500 text-center mgT-20"
               onClick={() => {
