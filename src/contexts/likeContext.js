@@ -53,9 +53,9 @@ const LikeProvider = ({ children }) => {
   };
 
   const removeFromLikes = async (item) => {
+    console.log("jskdj", item._id);
     try {
-      const response = await axios.delete(`/api/user/${item._id}`);
-      console.log("jskdj");
+      const response = await axios.delete(`/api/user/likes/${item._id}`);
       console.log(response);
       if (response.status === 200) {
         setLike(response.data.likes);

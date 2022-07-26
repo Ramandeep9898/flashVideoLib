@@ -22,7 +22,7 @@ const VideoSec = ({
   veiws,
   videoDetails,
 }) => {
-  // console.log(videoDetails);
+  console.log(videoDetails);
   const videoEmbed = "https://www.youtube.com/embed/";
   const videoSrc = `${videoEmbed}${_id}?autoplay=1`;
   return (

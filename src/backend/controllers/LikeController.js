@@ -73,6 +73,7 @@ export const addItemToLikedVideos = function(schema, request) {
 
 export const removeItemFromLikedVideos = function(schema, request) {
   const user = requiresAuth.call(this, request);
+  console.log(user);
   if (user) {
     const videoId = request.params.videoId;
     const filteredLikes = user.likes.filter((item) => item._id !== videoId);

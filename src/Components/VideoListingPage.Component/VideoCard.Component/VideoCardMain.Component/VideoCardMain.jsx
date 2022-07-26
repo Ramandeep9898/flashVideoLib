@@ -14,7 +14,7 @@ const VideoCardMain = ({ videos, addWatchLater }) => {
         />
 
         <div className="card-typo">
-          <Link to={`/VideoListing/${videos._id}`}>
+          <Link to={`/videos/${videos._id}`}>
             <div className="card capitalize fW-400 color text-left">
               {videos.title}
             </div>

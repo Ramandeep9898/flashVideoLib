@@ -12,7 +12,7 @@ const VideoDetails = () => {
   const { videoID } = useParams();
   const [videoDetails, setVideoDetails] = useState();
   const { videosData } = useData();
-  // console.log("yo", videosData);
+  console.log("yo", videosData);
 
   useEffect(() => {
     (async () => {
