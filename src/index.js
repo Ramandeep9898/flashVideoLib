@@ -8,6 +8,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { CategoryProvider } from "./contexts/categoryContext";
 import { WatchLaterProvider } from "./contexts/watchLaterContext";
 import { LikeProvider } from "./contexts/likeContext";
+import { AuthProvider } from "./Custom-hooks/useAuth";
 // Call make Server
 
 const root = createRoot(document.getElementById("root"));
@@ -17,11 +18,13 @@ root.render(
   <StrictMode>
     <Router>
       <LikeProvider>
-        <WatchLaterProvider>
-          <CategoryProvider>
-            <App />
-          </CategoryProvider>
-        </WatchLaterProvider>
+        <AuthProvider>
+          <WatchLaterProvider>
+            <CategoryProvider>
+              <App />
+            </CategoryProvider>
+          </WatchLaterProvider>
+        </AuthProvider>
       </LikeProvider>
     </Router>
   </StrictMode>
