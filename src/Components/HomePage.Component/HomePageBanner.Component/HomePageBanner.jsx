@@ -19,7 +19,7 @@ const HomePageBanner = () => {
               quod fugiat officiis?
             </span>
             <div className="mgT-20">
-              <Link to="/VideoListing">
+              <Link to="/videos">
                 <button className="btn solid-pri-btn">watch now</button>
               </Link>
             </div>

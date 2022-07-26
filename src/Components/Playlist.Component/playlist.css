@@ -19,9 +19,9 @@
   border-radius: 8px;
 }
 
-.input-box {
+/* .input-box {
   align-items: center;
-}
+} */
 .fix {
   display: flex;
   flex-direction: row;
