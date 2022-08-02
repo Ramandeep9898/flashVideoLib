@@ -6,10 +6,10 @@ import { useAuth } from "../Custom-hooks/useAuth";
 const likeContext = createContext();
 
 const LikeProvider = ({ children }) => {
-  // localStorage.setItem("flashPlay", "1234");
-  // const encodedToken = localStorage.getItem("flashToken");
-  console.log(encodedToken);
-  const { encodedToken } = useAuth();
+  localStorage.setItem("flashPlay", "1234");
+  const encodedToken = localStorage.getItem("flashToken");
+  // console.log(encodedToken);
+  // const { encodedToken } = useAuth();
   const [likes, setLike] = useState([]);
 
   useEffect(() => {
