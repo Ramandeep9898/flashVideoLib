@@ -47,7 +47,6 @@ const LikeProvider = ({ children }) => {
         setLike(response.data.likes);
       }
     } catch (error) {
-      // console.log("postError", error.response.data);
       console.log("postError", error);
     }
   };
@@ -61,7 +60,7 @@ const LikeProvider = ({ children }) => {
         setLike(response.data.likes);
       }
     } catch (error) {
-      console.log("deleteError", error);
+      console.log("deleteError", error.response);
     }
   };
 

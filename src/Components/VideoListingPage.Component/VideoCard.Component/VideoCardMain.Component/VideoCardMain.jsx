@@ -31,7 +31,6 @@ const VideoCardMain = ({ videos, addWatchLater }) => {
           <div className="btn-div">
             <button
               onClick={() => {
-                // console.log("videos",videos);
                 addWatchLater(
                   videos,
                   "ADD_TO_WATCH_LATER",

@@ -3,7 +3,7 @@ import React from "react";
 import logo from "./logo64.png";
 import { Link } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
-import { AiOutlineClockCircle } from "react-icons/ai";
+import { AiOutlineClockCircle, AiOutlineLike } from "react-icons/ai";
 import { IoPlayOutline } from "react-icons/io5";
 import { BiHomeSmile } from "react-icons/bi";
 import { TbPlaylistAdd } from "react-icons/tb";
@@ -42,6 +42,14 @@ const Header = () => {
               <div className="badge-on-avatar navbar-icons">
                 <div className="size">
                   <AiOutlineClockCircle size="lg" />
+                </div>
+              </div>
+            </Link>
+
+            <Link to="/playlist">
+              <div className="badge-on-avatar navbar-icons">
+                <div className="size">
+                  <AiOutlineLike size="lg" />
                 </div>
               </div>
             </Link>
