@@ -1,0 +1,39 @@
+.create-new-PL-container {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.create-new-PL-card {
+  z-index: 1;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 350px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* .input-box {
+  align-items: center;
+} */
+.fix {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.fix > div {
+  cursor: pointer;
+}
+
+.index0 {
+  z-index: 0;
+}
