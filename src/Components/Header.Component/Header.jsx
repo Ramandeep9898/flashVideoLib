@@ -46,7 +46,7 @@ const Header = () => {
               </div>
             </Link>
 
-            <Link to="/playlist">
+            <Link to="/like">
               <div className="badge-on-avatar navbar-icons">
                 <div className="size">
                   <AiOutlineLike size="lg" />

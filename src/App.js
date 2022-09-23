@@ -12,6 +12,7 @@ import { Auth } from "./Components/Auth.Component/Auth";
 import User from "./Components/User.Component/User";
 import VideoDetailsMain from "./Pages/VideoDetailsMain";
 import MockAPI from "./Mockman";
+import LikeMain from "./Pages/LikeMain";
 function App() {
   return (
     <div className="App">
@@ -24,6 +25,7 @@ function App() {
           <Route path="/user" element={<User />} />
           <Route path="/watchlater" element={<WatchLaterMain />} />
           <Route path="/playlist" element={<PlaylistMain />} />
+          <Route path="/like" element={<LikeMain />} />
         </Route>
         <Route element={<RestrictedRoute />}>
           <Route path="/auth" element={<Auth />} />

@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { createContext, useContext, useReducer } from "react";
 import axios from "axios";
+import { useAuth } from "../Custom-hooks/useAuth";
 // import { likeReducer } from "../Reducers/likeReducer";
 const likeContext = createContext();
 
 const LikeProvider = ({ children }) => {
   localStorage.setItem("flashPlay", "1234");
-  const encodedToken = localStorage.getItem("flashPlay");
+  const encodedToken = localStorage.getItem("flashToken");
+  // console.log(encodedToken);
+  // const { encodedToken } = useAuth();
   const [likes, setLike] = useState([]);
 
   useEffect(() => {
