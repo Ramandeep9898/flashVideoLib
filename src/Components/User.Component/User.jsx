@@ -1,6 +1,5 @@
 import React from "react";
 import { useAuth } from "../../Custom-hooks/useAuth";
-import "./user.css";
 
 const User = () => {
   const { user, logOutAuth } = useAuth();
