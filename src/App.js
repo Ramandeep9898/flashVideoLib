@@ -1,9 +1,5 @@
 import "./App.css";
-<<<<<<< HEAD
-import react from "react";
-import logo from "./logo.png";
 
-=======
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import HomeMain from "./Pages/HomeMain";
@@ -18,7 +14,6 @@ import User from "./Components/User.Component/User";
 import VideoDetailsMain from "./Pages/VideoDetailsMain";
 import MockAPI from "./Mockman";
 import LikeMain from "./Pages/LikeMain";
->>>>>>> 72af662d18522f1b9952f318590c6e3c4c2656a3
 function App() {
   return (
     <div className="App">
